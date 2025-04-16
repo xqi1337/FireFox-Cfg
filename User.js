@@ -229,7 +229,7 @@ user_pref("layout.css.visited_links_enabled", false); // Seiten können abfragen
 user_pref("privacy.resistFingerprinting.letterboxing", true); // Fügt Balken hinzu, um die Fenstergröße zu standardisieren
 
 user_pref("network.cookie.thirdparty.sessionOnly", true); // Drittanbieter-Cookies nur für die aktuelle Sitzung in isolierten Tabs.
-user_pref("network.trr.mode", 2); // Setzt DNS-über-HTTPS (DoH) als Standardmodus
+user_pref("network.trr.mode", 5); // Setzt DNS-über-HTTPS (DoH) als Standardmodus
 
 
 // URLs für Updates entfernen
