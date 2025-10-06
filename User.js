@@ -226,11 +226,17 @@ user_pref("dom.serviceWorkers.enabled", false); // Da Service Worker persistent 
 user_pref("dom.battery.enabled", false); // Die Battery API kann theoretisch auch zur Fingerprint-Erstellung beitragen.
 user_pref("browser.cache.offline.storage.enable", false); // Deaktiviert die lokale Speicherung.
 user_pref("layout.css.visited_links_enabled", false); // Seiten können abfragen, ob bestimmte Links auf "besucht" gesetzt sind und somit Rückschlüsse darauf ziehen, welche Seiten du bereits besucht hast.
-user_pref("privacy.resistFingerprinting.letterboxing", true); // Fügt Balken hinzu, um die Fenstergröße zu standardisieren
-
+user_pref("privacy.resistFingerprinting.letterboxing", false); // Ich möchte keine Balken, ich möchte, dass Websites im Vollbildmodus angezeigt werden, um die Fenstergröße zu standardisieren auch wenn dies für Fingerprinting genutzt werden kann.
 user_pref("network.cookie.thirdparty.sessionOnly", true); // Drittanbieter-Cookies nur für die aktuelle Sitzung in isolierten Tabs.
-user_pref("network.trr.mode", 5); // Setzt DNS-über-HTTPS (DoH) als Standardmodus
 
+// Erlaube search engine requests von der search bar
+user_pref("keyword.enabled", true);
+
+// DoH
+user_pref("network.trr.mode", 3); // Setzt DNS-über-HTTPS (DoH) als Standardmodus
+user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
+user_pref("network.trr.custom_uri", "https://dns.quad9.net/dns-query");
+user_pref("network.dns.skipTRR-when-parental-control-enabled", false);
 
 // URLs für Updates entfernen
 user_pref("app.update.url.details", "");
@@ -266,8 +272,17 @@ user_pref("dom.vibrator.enabled", false); // Deaktiviert die Vibration-API.
 user_pref("browser.download.useDownloadDir", false); // Fragt vor jedem Download nach Speicherort.
 user_pref("device.sensors.enabled", false); // Deaktiviert Zugriff auf Gerätesensoren (Fingerprinting-Schutz).
 
+// Zeige die bookmarks toolbar
+user_pref("browser.toolbars.bookmarks.visibility", "always");
+
 // Proxy-DNS
 user_pref("network.proxy.socks_remote_dns", true); // Lässt DNS-Anfragen über den Proxy laufen, verhindert DNS-Leaks.
+user_pref("network.proxy.type", 1); // Ich benutze einen proxy by default. info  /docs/NETWORKING.md
+user_pref("network.proxy.share_proxy_settings", true);
+user_pref("network.proxy.http", "127.0.0.1");
+user_pref("network.proxy.http_port", 8080);
+user_pref("network.proxy.ssl", "127.0.0.1");
+user_pref("network.proxy.ssl_port", 8080);
 
 // Deaktiviert automatische Updates für Add-ons und Such-Plugins
 user_pref("extensions.update.enabled", false); // Add-on-Updates deaktivieren.
@@ -284,3 +299,7 @@ user_pref("dom.private-attribution.submission.enabled", false); // Deaktiviert d
 user_pref("javascript.options.baselinejit", true); // Deaktiviert zwar den Baseline JIT-Compiler, führt jedoch zu Lag-Problemen und bleibt daher aktiviert.
 user_pref("javascript.options.ion", false); // Deaktiviert den Ion JIT-Compiler.
 user_pref("javascript.options.native_regexp", false); // Deaktiviert die nativen RegExp-Optimierungen.
+
+// nervig
+user_pref("browser.preferences.moreFromMozilla", false);
+user_pref("browser.tabs.firefox-view", false);
